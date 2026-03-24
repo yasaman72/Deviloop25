@@ -10,7 +10,6 @@ public class Enemy : CombatCharacter, IPointerDownHandler, IPoolable
     public Action<EnemyAction> OnIntentionChanged;
 
     [Header("Visualas and Animation")]
-    [SerializeField] private float _playActionDelay = 1f;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Animator _animator;
     [SerializeField] private Animator _parentAnimator;

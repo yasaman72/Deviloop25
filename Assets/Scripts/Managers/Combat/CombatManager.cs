@@ -39,7 +39,7 @@ namespace Deviloop
         private static IntVariable CombatRoundCounterVariable;
         private static BoolVariable IsInCombatVariable;
 
-        private void Awake()
+        private new void Awake()
         {
             var source = LocalizationSettings.StringDatabase.SmartFormatter.GetSourceExtension<PersistentVariablesSource>();
             IsInCombatVariable = source["global"]["IsInCombat"] as BoolVariable;

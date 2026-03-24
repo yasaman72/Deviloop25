@@ -15,17 +15,21 @@ using UnityEngine.Localization.SmartFormat.PersistentVariables;
 public class PlayerLassoManager : MonoBehaviour
 {
     public static Action<LassoShape> OnLassoShapeRecognized;
+
     public delegate void LassoSizeChanged(int maxSize, int currentSize);
+
     public static LassoSizeChanged OnLassoSizeChanged;
     public static Action OnLoopClosed;
 
 
     [SerializeField] private bool shouldLog = true;
+#if UNITY_EDITOR
     [SerializeField] private bool shouldPauseOnLoop = true;
-    [Header("components")]
-    [SerializeField] private AreaRenderer _areaRenderer;
-    [Space]
-    [SerializeField] private LineRenderer _lineRenderer;
+#endif
+    [Header("components")] [SerializeField]
+    private AreaRenderer _areaRenderer;
+
+    [Space] [SerializeField] private LineRenderer _lineRenderer;
     [SerializeField] private ContactFilter2D _itemsFilter;
     [SerializeField] private float _pointSpacing = 0.1f;
     [SerializeField] private float _pointSpacingForLoop = 0.3f;
@@ -34,14 +38,12 @@ public class PlayerLassoManager : MonoBehaviour
     [SerializeField] private float _loopMinArea = 2;
     [SerializeField] private Gradient _defaultColor;
     [SerializeField] private Gradient _nearCloseColor;
-    [Space]
-    [SerializeField] private Transform _cardsResolvePosition;
+    [Space] [SerializeField] private Transform _cardsResolvePosition;
     [SerializeField] private float _cardsResolveDistance;
     [SerializeField] private ModifiableFloat _flyDuration = new ModifiableFloat(1f);
     [SerializeField] private ModifiableFloat _rotateDuration = new ModifiableFloat(.5f);
     [SerializeField] private ModifiableFloat _waitBeforeApply = new ModifiableFloat(1.5f);
-    [Space]
-    [SerializeField] private float _slowMotionTimeScale = 0.2f;
+    [Space] [SerializeField] private float _slowMotionTimeScale = 0.2f;
     [SerializeField] private int _lassoLength = 40;
     [SerializeField] private int _minPOintForLoop = 10;
     [SerializeField] private int _maxAllowedItems = 3;
@@ -57,6 +59,7 @@ public class PlayerLassoManager : MonoBehaviour
 
     // TODO: a more generic to handle values modified by relics
     private static int maxedAllowedItems;
+
     public static int MaxedAllowedItems
     {
         get => maxedAllowedItems;
@@ -65,8 +68,8 @@ public class PlayerLassoManager : MonoBehaviour
             maxedAllowedItems = value;
             MaxedAllowedItemsVariable.Value = maxedAllowedItems;
         }
-
     }
+
     private static IntVariable MaxedAllowedItemsVariable;
 
     public static int lassoedCardsCount = 0;
@@ -179,6 +182,7 @@ public class PlayerLassoManager : MonoBehaviour
                     {
                         _lineRenderer.SetPosition(i, _points[i]);
                     }
+
                     _lineRenderer.positionCount = _points.Count;
                 }
             }
@@ -254,6 +258,7 @@ public class PlayerLassoManager : MonoBehaviour
             isLooping = false;
             return -1; // not enough points to form a loop
         }
+
         Vector2 lastPoint = _points[^1];
 
         // check closest points to the last point
@@ -267,6 +272,7 @@ public class PlayerLassoManager : MonoBehaviour
                     closestPointIndex = i;
                     continue;
                 }
+
                 if (Vector2.Distance(lastPoint, _points[i]) < Vector2.Distance(lastPoint, _points[closestPointIndex]))
                 {
                     closestPointIndex = i;
@@ -274,7 +280,9 @@ public class PlayerLassoManager : MonoBehaviour
             }
             else
             {
-                Logger.Log($"Point {i} is too far from the last point to form a loop. Distance: {Vector2.Distance(lastPoint, _points[i])}", shouldLog);
+                Logger.Log(
+                    $"Point {i} is too far from the last point to form a loop. Distance: {Vector2.Distance(lastPoint, _points[i])}",
+                    shouldLog);
             }
         }
 
@@ -355,24 +363,21 @@ public class PlayerLassoManager : MonoBehaviour
             _isResolvingALoop = false;
             return;
         }
-       
+
         ClearLasso();
 
         using var _ = new DisposableGeneric(() =>
-        {
-            try
             {
-                _areaRenderer.RenderSpriteShape(loopPoints);
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError(e);
-            }
-        },
-        () =>
-        {
-            _areaRenderer.Clear();
-        });
+                try
+                {
+                    _areaRenderer.RenderSpriteShape(loopPoints);
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogError(e);
+                }
+            },
+            () => { _areaRenderer.Clear(); });
 
 
         _hasAlreadyDrawn = true;
@@ -469,10 +474,10 @@ public class PlayerLassoManager : MonoBehaviour
     private void RecordTheShapeOfLasso(List<Vector2> points)
     {
         StartCoroutine(_gestureRecognizerController.RecordPoints(points, shape =>
-           {
-               recordedLassoShape = shape;
-               OnLassoShapeRecognized?.Invoke(recordedLassoShape);
-               RelicManager.ApplyEffectsForEvent<AfterLoopClosedEventWithItam>(this);
-           }));
+        {
+            recordedLassoShape = shape;
+            OnLassoShapeRecognized?.Invoke(recordedLassoShape);
+            RelicManager.ApplyEffectsForEvent<AfterLoopClosedEventWithItam>(this);
+        }));
     }
 }

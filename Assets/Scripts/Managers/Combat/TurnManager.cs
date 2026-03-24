@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class TurnManager : MonoBehaviour
 {
-    [SerializeField] private float _delayBeforeStart = 1.5f;
-
     public enum ETurnMode
     {
         Player,

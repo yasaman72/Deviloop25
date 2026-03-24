@@ -37,8 +37,10 @@ namespace Deviloop
 
         [Header("Price")]
         public int price;
+#if UNITY_EDITOR
         [SerializeField] private bool overridePrice = false;
-
+#endif
+        
         [Header("Visuals")]
         public Sprite cardIcon;
         public Vector2 spriteScale = new Vector2(.5f, .5f);
@@ -103,7 +105,7 @@ namespace Deviloop
             }
         }
 
-        protected async Task PlayAnimations(GameObject card, GameObject target = null)
+        private async Task PlayAnimations(GameObject card, GameObject target = null)
         {
             for (int i = 0; i < _animationType.Length; i++)
             {

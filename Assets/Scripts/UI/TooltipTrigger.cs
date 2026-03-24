@@ -10,7 +10,6 @@ namespace Deviloop
         [SerializeField] private bool _shouldShowDuringLasso = false;
         [SerializeField] private LocalizedString _tooltipText;
 
-        private bool _isPointerOver;
         private CancellationTokenSource _cts;
 
         private void OnEnable()
@@ -30,7 +29,6 @@ namespace Deviloop
 
         private void ResetTooltip()
         {
-            _isPointerOver = false;
             CancelAndDispose();
 
             if (TooltipManager.Instance != null)
@@ -44,8 +42,6 @@ namespace Deviloop
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            _isPointerOver = true;
-
             RenewToken();
 
             TooltipManager.Instance.ShowTooltipUnderMouse(
@@ -54,8 +50,6 @@ namespace Deviloop
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            _isPointerOver = false;
-
             if (!isActiveAndEnabled || !gameObject.activeInHierarchy)
             {
                 TooltipManager.Instance.HideTooltip();

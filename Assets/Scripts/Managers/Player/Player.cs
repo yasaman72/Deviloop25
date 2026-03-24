@@ -12,12 +12,12 @@ namespace Deviloop
             PlayerCombatCharacter = this;
         }
 
-        private void OnEnable()
+        private new void OnEnable()
         {
             CombatManager.OnCombatFinishedEvent += OnCombatFinished;
         }
 
-        private void OnDisable()
+        private new void OnDisable()
         {
             CombatManager.OnCombatFinishedEvent -= OnCombatFinished;
         }
