@@ -77,7 +77,7 @@ public class Enemy : CombatCharacter, IPointerDownHandler, IPoolable
         if (IsDead())
             return;
 
-        int behaviorIndex = SeededRandom.Range(0, enemyStats.EnemyActions.Count);
+        int behaviorIndex = SeededRandom.Range(0, enemyStats.enemyActions.Count);
         EnemyAction previousAction = currentAction;
         currentAction = enemyStats.GetNextAction(previousAction);
         OnIntentionChanged?.Invoke(currentAction);

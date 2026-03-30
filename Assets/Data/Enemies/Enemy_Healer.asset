@@ -14,18 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 10
   prefab: {fileID: 828670261892621840, guid: 829a3bff433781e48ad45f8da7e48e6f, type: 3}
-  EnemyActions:
+  enemyActions:
   - Action:
-      rid: 4472579548979921080
+      rid: 5637349645595967600
     Probability: 50
   - Action:
-      rid: 4472579548979921081
+      rid: 5637349645595967601
     Probability: 50
   _developerNotes: 
   references:
     version: 2
     RefIds:
-    - rid: 4472579548979921080
+    - rid: 5637349645595967600
       type: {class: EnemyAction_Heal, ns: Deviloop, asm: Deviloop}
       data:
         icon: {fileID: 1443099479, guid: ab086aad180de5b4eafbcdec3fa611e8, type: 3}
@@ -43,7 +43,7 @@ MonoBehaviour:
           m_WaitForCompletion: 0
           m_LocalVariables: []
         power: 3
-    - rid: 4472579548979921081
+    - rid: 5637349645595967601
       type: {class: EnemyAction_Attack, ns: Deviloop, asm: Deviloop}
       data:
         icon: {fileID: 6674386295937086461, guid: 679a6789cdf48e14e966694d4321ebb8, type: 3}

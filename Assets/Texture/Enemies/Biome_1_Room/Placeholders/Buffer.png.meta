@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fc53331e1b791d147968c631c341cd58
+guid: 3f783c3d4620eef44ab6d2d0ffd96882
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5281422124547630143
-    second: Chest_0
+      213: -8859933292780550060
+    second: Buffer_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,8 +49,8 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 9
+  spritePivot: {x: 0.49670297, y: 0.059841696}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -122,27 +122,40 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chest_0
+      name: Buffer_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 22
-        width: 152
-        height: 114
+        x: 190
+        y: 43
+        width: 643
+        height: 944
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1cb13755f8e94b6b0800000000000000
-      internalID: -5281422124547630143
+      spriteID: 4588826bc913b0580800000000000000
+      internalID: -8859933292780550060
       vertices: []
       indices: 
       edges: []
@@ -152,7 +165,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -161,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Chest_0: -5281422124547630143
+      Buffer_0: -8859933292780550060
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

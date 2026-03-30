@@ -8,7 +8,7 @@ namespace Deviloop
     {
         public Enemy prefab;
 
-        public List<EnemyActionProbability> EnemyActions;
+        public List<EnemyActionProbability> enemyActions;
 
         [DeveloperNotes, SerializeField]
         private string _developerNotes;
@@ -24,7 +24,7 @@ namespace Deviloop
         private int ActionsTotalWeight()
         {
             int weight = 0;
-            foreach (EnemyActionProbability action in EnemyActions)
+            foreach (EnemyActionProbability action in enemyActions)
             {
                 weight += action.Probability;
             }
@@ -33,14 +33,14 @@ namespace Deviloop
 
         public EnemyAction GetNextAction(EnemyAction previousAction)
         {
-            int TotalWeight = ActionsTotalWeight();
+            int totalWeight = ActionsTotalWeight();
             int randomIndex = 0;
-            int randomValue = SeededRandom.Range(0, TotalWeight);
+            int randomValue = SeededRandom.Range(0, totalWeight);
             int cumulativeWeight = 0;
 
-            for (int i = 0; i < EnemyActions.Count; i++)
+            for (int i = 0; i < enemyActions.Count; i++)
             {
-                cumulativeWeight += EnemyActions[i].Probability;
+                cumulativeWeight += enemyActions[i].Probability;
                 if (randomValue < cumulativeWeight)
                 {
                     randomIndex = i;
@@ -48,7 +48,7 @@ namespace Deviloop
                 }
             }
 
-            EnemyAction nextAction = EnemyActions[randomIndex].Action;
+            EnemyAction nextAction = enemyActions[randomIndex].Action;
             if (nextAction.CanBeTaken(previousAction) == false)
             {
                 return GetNextAction(previousAction);

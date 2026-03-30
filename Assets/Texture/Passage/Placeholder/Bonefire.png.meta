@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3f783c3d4620eef44ab6d2d0ffd96882
+guid: fa6a5a35d63ab9449b8391528d86bf35
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8859933292780550060
-    second: Buffer_0
+      213: 7610994666730515619
+    second: Bonefire_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,8 +49,8 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.49670297, y: 0.059841696}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -122,27 +122,40 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Buffer_0
+      name: Bonefire_0
       rect:
         serializedVersion: 2
-        x: 190
-        y: 43
-        width: 643
-        height: 944
+        x: 6
+        y: 14
+        width: 209
+        height: 215
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4588826bc913b0580800000000000000
-      internalID: -8859933292780550060
+      spriteID: 3ac6dd9135faf9960800000000000000
+      internalID: 7610994666730515619
       vertices: []
       indices: 
       edges: []
@@ -152,7 +165,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -161,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Buffer_0: -8859933292780550060
+      Bonefire_0: 7610994666730515619
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f3e0340c67077674ea47df2355abcb98
+guid: ed9a4ded4ea8c0c458ec731d5fa66a13
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7157415707334749545
-    second: bommber_0
+      213: 1944592574858670343
+    second: Blacksmith_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,8 +49,8 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.5098912, y: 0.12578301}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -122,27 +122,40 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bommber_0
+      name: Blacksmith_0
       rect:
         serializedVersion: 2
-        x: 162
-        y: 106
-        width: 581
-        height: 872
+        x: 0
+        y: 14
+        width: 337
+        height: 618
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 96d2d790aaf345360800000000000000
-      internalID: 7157415707334749545
+      spriteID: 7013059d4a49cfa10800000000000000
+      internalID: 1944592574858670343
       vertices: []
       indices: 
       edges: []
@@ -152,7 +165,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -161,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bommber_0: 7157415707334749545
+      Blacksmith_0: 1944592574858670343
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

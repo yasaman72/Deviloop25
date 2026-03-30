@@ -32,6 +32,12 @@ MonoBehaviour:
     relicEffect:
     - rid: 686208056379572350
   icon: {fileID: 21300000, guid: 56e14df7eb3d42e40b41dbeae0db0861, type: 3}
+  ICO:
+    m_AssetGUID: 56e14df7eb3d42e40b41dbeae0db0861
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
   rarity: 30
   isNegative: 0
   canHaveDuplicates: 0
@@ -83,3 +89,4 @@ MonoBehaviour:
       type: {class: DealDamageToTarget, ns: Deviloop, asm: Deviloop}
       data:
         _damage: 3
+        _attackType: 0
